@@ -7,8 +7,13 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(cors());
 app.use(express.json());
+
 const supplierRoutes = require("./routes/supplierRoutes");
 app.use("/api/suppliers", supplierRoutes);
+
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
+
 
 
 mongoose.connect(process.env.MONGO_URI)
